@@ -1,0 +1,9 @@
+source 'http://rubygems.org'
+
+gem 'rack', '~> 1.4.5'
+gem 'json', '~> 1.8.1'
+gem 'grape', github: 'intridea/grape'
+gem 'grape-entity'
+gem 'mysql2'
+gem 'activerecord', '~> 3.2.15'
+gem 'puma'
