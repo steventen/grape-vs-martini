@@ -16,19 +16,31 @@ An example `curl` command would be like:
 	
 	curl "http://127.0.0.1:8080/projects?key=61c2339c1bc92bc48120b55513cd568b"
 
-For Grape, port `9292` is used, and for Martini, port `8080` is used.
+For Grape, `rack app` uses port `9292`, `rails app` uses port `3000` as default.
+
+For Martini, port `8080` is used.
 
 ## How to run the server
 
 ### Grape Example
 
-Under `grape-example` folder. The API is mounted directly on Rack, using [puma](https://github.com/puma/puma)
+Under `grape-example` folder. There are two folders, in which Grape API is mounted on Rack or Rails, using [puma](https://github.com/puma/puma)
+
+#### On Rack
 
 1. Modify database settings in `config.ru` 
 
 2. Run `bundle`
 
-3. Run `rackup`
+3. Run `rackup -o 127.0.0.1`
+
+#### On Rails
+
+1. Modify database settings in `config/database.yml` 
+
+2. Run `bundle`
+
+3. Run `rails s puma -b 127.0.0.1`
 
 ### Martini Example
 
@@ -69,26 +81,55 @@ Sample companies' api keys:
 
 A simple `ab` test is made, with command `ab -c 10 -n 1000 http://127.0.0.1:8080/projects?key=61c2339c1bc92bc48120b55513cd568b`
 
+Test environment: Macbook Air CPU 1.7GHz Core i5, 8GB DDR3, OSX 10.9.1
+
+ruby -v 2.0.0p247, go version go1.2 darwin/amd64, rails 3.2.16
+
 ### Grape
-	
+
+#### On Rack
+
 	Concurrency Level:      10
-	Time taken for tests:   24.616 seconds
+	Time taken for tests:   30.643 seconds
 	Complete requests:      1000
 	Failed requests:        0
 	Write errors:           0
 	Total transferred:      2303000 bytes
 	HTML transferred:       2211000 bytes
-	Requests per second:    40.62 [#/sec] (mean)
-	Time per request:       246.162 [ms] (mean)
-	Time per request:       24.616 [ms] (mean, across all concurrent requests)
-	Transfer rate:          91.36 [Kbytes/sec] received
+	Requests per second:    32.63 [#/sec] (mean)
+	Time per request:       306.431 [ms] (mean)
+	Time per request:       30.643 [ms] (mean, across all concurrent requests)
+	Transfer rate:          73.39 [Kbytes/sec] received
 
 	Connection Times (ms)
 	              min  mean[+/-sd] median   max
-	Connect:        0    0   0.0      0       0
-	Processing:    99  245 359.0    221    3853
-	Waiting:       91  238 358.2    216    3853
-	Total:        100  245 359.0    222    3854
+	Connect:        0    0   0.1      0       1
+	Processing:    55  306 505.3    267    5302
+	Waiting:       52  290 505.0    256    5298
+	Total:         55  306 505.3    267    5302
+
+#### On Rails
+	
+	Concurrency Level:      10
+	Time taken for tests:   3.781 seconds
+	Complete requests:      1000
+	Failed requests:        0
+	Write errors:           0
+	Non-2xx responses:      1000
+	Total transferred:      199000 bytes
+	HTML transferred:       9000 bytes
+	Requests per second:    264.47 [#/sec] (mean)
+	Time per request:       37.811 [ms] (mean)
+	Time per request:       3.781 [ms] (mean, across all concurrent requests)
+	Transfer rate:          51.40 [Kbytes/sec] received
+
+	Connection Times (ms)
+	              min  mean[+/-sd] median   max
+	Connect:        0    0   0.2      0       3
+	Processing:     3   37  64.4     28     718
+	Waiting:        3   37  64.4     28     718
+	Total:          3   38  64.5     28     719
+
 
 ### Martini
 

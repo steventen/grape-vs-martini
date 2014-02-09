@@ -1,6 +1,4 @@
-require 'grape-entity'
-
-module MySite
+module GrapeApiRails
 	module APIEntities
 	  class Project < Grape::Entity
 	    expose :id
