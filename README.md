@@ -64,3 +64,49 @@ Sample companies' api keys:
 	77a767c39adc71fb241285309ff37ee5
 	75e82d812630bf6d9371339f3e634801
 	b5125eeabadcd5b3e55a76694d2b62b8
+
+## Benchmark
+
+A simple `ab` test is made, with command `ab -c 10 -n 1000 http://127.0.0.1:8080/projects?key=61c2339c1bc92bc48120b55513cd568b`
+
+### Grape
+	
+	Concurrency Level:      10
+	Time taken for tests:   24.616 seconds
+	Complete requests:      1000
+	Failed requests:        0
+	Write errors:           0
+	Total transferred:      2303000 bytes
+	HTML transferred:       2211000 bytes
+	Requests per second:    40.62 [#/sec] (mean)
+	Time per request:       246.162 [ms] (mean)
+	Time per request:       24.616 [ms] (mean, across all concurrent requests)
+	Transfer rate:          91.36 [Kbytes/sec] received
+
+	Connection Times (ms)
+	              min  mean[+/-sd] median   max
+	Connect:        0    0   0.0      0       0
+	Processing:    99  245 359.0    221    3853
+	Waiting:       91  238 358.2    216    3853
+	Total:        100  245 359.0    222    3854
+
+### Martini
+
+	Concurrency Level:      10
+	Time taken for tests:   0.900 seconds
+	Complete requests:      1000
+	Failed requests:        0
+	Write errors:           0
+	Total transferred:      2314000 bytes
+	HTML transferred:       2211000 bytes
+	Requests per second:    1110.80 [#/sec] (mean)
+	Time per request:       9.003 [ms] (mean)
+	Time per request:       0.900 [ms] (mean, across all concurrent requests)
+	Transfer rate:          2510.14 [Kbytes/sec] received
+
+	Connection Times (ms)
+	              min  mean[+/-sd] median   max
+	Connect:        0    0   0.3      0       3
+	Processing:     3    9   2.9      8      22
+	Waiting:        3    8   2.9      8      22
+	Total:          3    9   2.9      8      23
