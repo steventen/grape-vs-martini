@@ -24,7 +24,7 @@ For Martini, port `8080` is used.
 
 ### Grape Example
 
-Under `grape-example` folder. There are two folders, in which Grape API is mounted on Rack or Rails, using [puma](https://github.com/puma/puma)
+Under `grape-example`, there are two folders, in which Grape API is mounted on *Rack* or *Rails*, using [puma](https://github.com/puma/puma)
 
 #### On Rack
 
