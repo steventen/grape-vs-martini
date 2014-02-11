@@ -2,6 +2,8 @@
 
 API server example to compare Ruby's [Grape](https://github.com/intridea/grape) Web Framwork to [Martini](https://github.com/codegangsta/martini) Web Framwork in Go
 
+[See blog post for details](http://stevenyue.com/2014/02/10/from-rubys-grape-to-martini-in-go-for-building-web-api-server/)
+
 And would respond to the following routes:
 
     GET /projects(.json)
