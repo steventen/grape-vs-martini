@@ -34,7 +34,7 @@ Under `grape-example`, there are two folders, in which Grape API is mounted on *
 
 2. Run `bundle`
 
-3. Run `rackup -o 127.0.0.1`
+3. Run `bundle exec rackup -o 127.0.0.1`
 
 #### On Rails
 
