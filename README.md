@@ -92,45 +92,44 @@ ruby -v 2.0.0p247, go version go1.2 darwin/amd64, rails 3.2.16
 #### On Rack
 
 	Concurrency Level:      10
-	Time taken for tests:   30.643 seconds
+	Time taken for tests:   16.277 seconds
 	Complete requests:      1000
 	Failed requests:        0
 	Write errors:           0
 	Total transferred:      2303000 bytes
 	HTML transferred:       2211000 bytes
-	Requests per second:    32.63 [#/sec] (mean)
-	Time per request:       306.431 [ms] (mean)
-	Time per request:       30.643 [ms] (mean, across all concurrent requests)
-	Transfer rate:          73.39 [Kbytes/sec] received
+	Requests per second:    61.44 [#/sec] (mean)
+	Time per request:       162.769 [ms] (mean)
+	Time per request:       16.277 [ms] (mean, across all concurrent requests)
+	Transfer rate:          138.17 [Kbytes/sec] received
 
 	Connection Times (ms)
 	              min  mean[+/-sd] median   max
-	Connect:        0    0   0.1      0       1
-	Processing:    55  306 505.3    267    5302
-	Waiting:       52  290 505.0    256    5298
-	Total:         55  306 505.3    267    5302
+	Connect:        0    0   0.0      0       0
+	Processing:    23  162  33.9    172     289
+	Waiting:       17  156  33.2    169     278
+	Total:         23  162  33.9    173     290
 
 #### On Rails
 	
 	Concurrency Level:      10
-	Time taken for tests:   3.781 seconds
+	Time taken for tests:   15.902 seconds
 	Complete requests:      1000
 	Failed requests:        0
 	Write errors:           0
-	Non-2xx responses:      1000
-	Total transferred:      199000 bytes
-	HTML transferred:       9000 bytes
-	Requests per second:    264.47 [#/sec] (mean)
-	Time per request:       37.811 [ms] (mean)
-	Time per request:       3.781 [ms] (mean, across all concurrent requests)
-	Transfer rate:          51.40 [Kbytes/sec] received
+	Total transferred:      2492000 bytes
+	HTML transferred:       2211000 bytes
+	Requests per second:    62.88 [#/sec] (mean)
+	Time per request:       159.024 [ms] (mean)
+	Time per request:       15.902 [ms] (mean, across all concurrent requests)
+	Transfer rate:          153.03 [Kbytes/sec] received
 
 	Connection Times (ms)
 	              min  mean[+/-sd] median   max
-	Connect:        0    0   0.2      0       3
-	Processing:     3   37  64.4     28     718
-	Waiting:        3   37  64.4     28     718
-	Total:          3   38  64.5     28     719
+	Connect:        0    0   0.0      0       0
+	Processing:    15  158  23.5    170     186
+	Waiting:       15  158  23.5    170     185
+	Total:         16  158  23.5    171     186
 
 
 ### Martini

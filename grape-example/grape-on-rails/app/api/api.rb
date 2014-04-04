@@ -3,7 +3,7 @@ module GrapeApiRails
 	class API < Grape::API
 		format :json
 		default_format :json
-		prefix 'api'
+		# prefix 'api'
 		cascade false
 		default_error_formatter :json
 
